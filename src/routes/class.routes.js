@@ -9,20 +9,20 @@ const getClassesController = require('../controllers/class/query/classes.get.con
 const createClassController = require('../controllers/class/command/class.post.controller')
 
 // constants
-const { CLASS_CODE } = require('../constants/routes.constants')
+const { CLASS_CODE, FACULTY, FACULTY_ID } = require('../constants/routes.constants')
 
 // routes
 
-/* GET CLASSES */
-router.get('/', getClassesController)
+/* GET CLASSES BELONGING TO FACULTY */
+router.get(FACULTY+FACULTY_ID, getClassesController)
 
-// /* GET CLASS */
+/* GET CLASS */
 router.get(CLASS_CODE, getClassController)
 
-// /* CREATE CLASS */
+/* CREATE CLASS */
 router.post('/', createClassController)
 
-// /* UPDATE CLASS */
+/* UPDATE CLASS */
 router.patch(CLASS_CODE, updateClassController)
 
 module.exports = router

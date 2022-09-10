@@ -10,7 +10,7 @@ const getFacultiesController = require('../controllers/faculty/query/faculties.g
 const createFacultyController = require('../controllers/faculty/command/faculty.post.controller')
 
 // constants
-const { FACULTY_ID } = require('../constants/routes.constants')
+const { FACULTY_ID, EMAIL, PASSWORD } = require('../constants/routes.constants')
 
 // routes
 
@@ -18,7 +18,7 @@ const { FACULTY_ID } = require('../constants/routes.constants')
 router.get('/', getFacultiesController)
 
 /* GET FACULTY */
-router.get(FACULTY_ID, getFacultyController)
+router.get(EMAIL+PASSWORD, getFacultyController)
 
 /* CREATE FACULTY */
 router.post('/', createFacultyController)

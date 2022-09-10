@@ -35,9 +35,12 @@ const classModel = dbConnection.define(
     }
 )
 
-facultyModel.hasMany(classModel,{
-    foreignKey: 'facultyId',
-    sourceKey: 'facultyId'
+// facultyModel.hasOne(classModel,{
+//     foreignKey: 'facultyId'
+// })
+
+classModel.hasMany(studentModel, {
+    foreignKey: 'classCode',
 })
 
 module.exports = classModel

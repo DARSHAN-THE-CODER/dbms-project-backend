@@ -10,6 +10,8 @@ module.exports = {
     // FACULTIES
     FACULTY: '/faculty',
     FACULTY_ID: '/:facultyId',
+    EMAIL: '/:email',
+    PASSWORD: '/:password',
 
     // STUDENTS
     STUDENT: '/student',
@@ -18,5 +20,5 @@ module.exports = {
     // SUBMISSIONS
     SUBMISSION: '/submission',
     SUBMISSION_ID: '/:submissionId',
-    
+
 }

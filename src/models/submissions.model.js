@@ -58,4 +58,8 @@ assignmentModel.hasMany(submissionModel,{
     foreignKey: 'assignmentId'
 })
 
+studentModel.hasMany(submissionModel, {
+    foreignKey: 'srn'
+})
+
 module.exports = submissionModel

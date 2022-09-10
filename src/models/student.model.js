@@ -12,7 +12,7 @@ const studentModel = dbConnection.define(
         srn: {
             type: DataTypes.STRING(20),
             primaryKey: true,
-            unique: true,
+            // unique: true,
             allowNull: false,
         },
         name: {
@@ -42,6 +42,9 @@ const studentModel = dbConnection.define(
     modelConfiguration
 )
 
+// studentModel.belongsTo(classModel,{
+//     foreignKey: 'classCode'
+// })
 // classModel.hasMany(studentModel, {
 //     foreignKey: 'classCode',
 //     sourceKey: 'classCode'

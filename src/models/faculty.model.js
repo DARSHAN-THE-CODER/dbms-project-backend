@@ -3,6 +3,8 @@ const dbConnection = require('../config/database')
 
 const modelConfiguration = require('../config/database/model.config')
 
+const classModel = require('./class.model')
+
 const facultyModel = dbConnection.define('Faculties', {
     facultyId: {
         type: DataTypes.STRING(256),
@@ -58,5 +60,10 @@ const facultyModel = dbConnection.define('Faculties', {
 }, modelConfiguration
 
 )
+
+facultyModel.hasMany(classModel,{
+    foreignKey: 'facultyId',
+    sourceKey: 'facultyId'
+})
 
 module.exports = facultyModel

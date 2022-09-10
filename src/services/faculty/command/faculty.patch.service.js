@@ -6,16 +6,16 @@ const facultyModel = require('../../../models/faculty.model')
 const updateFacultyService = async (req, res) => {
     try {
         const result = await dbConnection.transaction(async (t) => {
-            const {facultyId} = req.body;
-            const facultyEntity = facultyModel.update(
-                ...req.body,
+            const selectedFields = { ...req.body }
+
+            const facultyEntity = await facultyModel.update(
+                selectedFields,
                 {
                     where: {
-                        facultyId: facultyId,
+                        facultyId: req.params.facultyId,
                     },
                     transaction: t,
-                }, 
-            )
+            })
             console.log("Successfully updated faculty")
             res.status(200).send();
         })

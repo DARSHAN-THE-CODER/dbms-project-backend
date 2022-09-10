@@ -10,12 +10,12 @@ const getStudentsController = require('../controllers/student/query/students.get
 const createStudentController = require('../controllers/student/command/student.post.controller')
 
 // constants
-const { SRN } = require('../constants/routes.constants')
+const { SRN, CLASS, CLASS_CODE } = require('../constants/routes.constants')
 
 // routes
 
-/* GET STUDENTS */
-router.get('/', getStudentsController)
+/* GET STUDENTS BELONGING TO PARTICULAR CLASS*/
+router.get(CLASS+CLASS_CODE, getStudentsController)
 
 /* GET STUDENT */
 router.get(SRN, getStudentController)

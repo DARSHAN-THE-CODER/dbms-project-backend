@@ -4,6 +4,9 @@ const cors = require('cors')
 // const path = require('path')
 const initServer = require('./src/utils')
 
+// Initializing server
+initServer()
+
 // router
 const mainRouter = require('./src/routes')
 
@@ -22,8 +25,6 @@ app.use(
 )
 app.use(cors())
 
-// Initializing server
-initServer()
 
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to assignment management system' })

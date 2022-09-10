@@ -15,7 +15,7 @@ const submissionRouter = require('./submission.routes')
 // routes
 
 /* ASSIGNMENT ROUTES */
-// router.use(ASSIGNMENTS, assignmentsRouter)
+router.use(ASSIGNMENTS, assignmentsRouter)
 
 // /* CLASS ROUTES */
 router.use(CLASS, classRouter)

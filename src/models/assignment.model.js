@@ -29,9 +29,14 @@ const assignmentModel = dbConnection.define(
             allowNull: true,
             defaultValue: null,
         },
-        postedDate: {
-            type: DataTypes.DATE,
-            allowNull: false,
+        type: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,  //0 for links, 1 for text/para
+        },
+        resources: {
+            type: DataTypes.STRING(2048),
+            allowNull: true,
+            defaultValue: null,
         },
         deadline: {
             type: DataTypes.DATE,
