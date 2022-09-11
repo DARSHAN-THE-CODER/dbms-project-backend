@@ -27,6 +27,6 @@ router.use(FACULTY, facultyRouter)
 router.use(STUDENT, studentRouter)
 
 // /* SUBMISSION ROUTES */
-// router.use(SUBMISSION, submissionRouter)
+router.use(SUBMISSION, submissionRouter)
 
 module.exports = router

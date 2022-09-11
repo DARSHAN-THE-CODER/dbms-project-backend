@@ -12,16 +12,12 @@ const studentModel = require('./student.model')
 const submissionModel = dbConnection.define(
     'Submissions',
     {
-        submissionId: {
-            type: DataTypes.STRING(256),
-            primaryKey: true,
-            allowNull: false,
-            unique: true,
-        },
-        dateOfSubmission: {
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
+        // submissionId: {
+        //     type: DataTypes.STRING(256),
+        //     primaryKey: true,
+        //     allowNull: false,
+        //     unique: true,
+        // },
         response: {
             type: DataTypes.STRING(2048),
             allowNull: false,

@@ -1,5 +1,5 @@
 // service
-const getSubmissionsService = require('../../../services/submission/query/submissions.get.service')
+const getSubmissionsService = require('../../../services/submission/query/submisssions.get.service')
 
 const getSubmissionsController = async (req, res) => {
     await getSubmissionsService(req, res);
