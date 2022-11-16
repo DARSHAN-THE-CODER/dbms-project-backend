@@ -12,18 +12,32 @@ const updateAssignmentService = async (req, res) => {
                 },
                 {
                     where: {
-                        assignmentId: req.body.assignmentId
+                        assignmentId: req.params.assignmentId
                     },
                     transaction: t,
                 }
             )
             console.log(assignmentEntity);
-            res.status(200).send({message: "Successfully updated"})
+            res.status(200).send({ message: "Successfully updated" })
         })
     } catch (error) {
         console.log(error);
-        res.status(500).send();
+        res.status(500).send({ message: "Failed to update" });
     }
 }
 
 module.exports = updateAssignmentService
+
+// create trigger for stdents model, which updates cr field of each person belonging to particular class when cr is changed
+
+// code
+
+// sql query 
+// CREATE TRIGGER update_cr
+// AFTER UPDATE ON classes
+// FOR EACH ROW
+// BEGIN
+//     UPDATE students
+//     SET cr = NEW.cr
+//     WHERE classCode = NEW.classCode;
+// END;

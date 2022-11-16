@@ -8,6 +8,7 @@ const {
     DB_PASSWORD,
     DB_HOST,
     DB_PORT,
+    DB_LOGGING,
     DB_NAME,
 } = config.DATABASE
 
@@ -16,7 +17,7 @@ const connectionParams = {
     dialect: DB_TYPE,
     host: DB_HOST,
     port: DB_PORT,
-    logging: 0,
+    // logging:'0',
     dialectOptions: {
         application_name: 'assignment',
         useUTC: false,

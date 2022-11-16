@@ -28,6 +28,14 @@ const facultyModel = dbConnection.define('Faculties', {
             isEmail: true,
         },
     },
+    DOB: {
+        type: DataTypes.DATE,
+        allowNull: true,
+    },
+    age: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+    },
     address: {
         type: DataTypes.STRING(512),
         allowNull: true,
@@ -61,7 +69,7 @@ const facultyModel = dbConnection.define('Faculties', {
 
 )
 
-facultyModel.hasMany(classModel,{
+facultyModel.hasMany(classModel, {
     foreignKey: 'facultyId',
     sourceKey: 'facultyId'
 })

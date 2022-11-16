@@ -19,11 +19,11 @@ const createClassService = async (req, res) => {
                 }
             )
             console.log(`Successfully created class ${classCode}`);
-            res.status(201).send();
+            res.status(201).send({message:`Successfully created class ${classCode}`});
         })
     } catch (error) {
         console.log(error)
-        res.status(500).send();
+        res.status(500).send({message: "Failed to create class"});
     }
 }
 

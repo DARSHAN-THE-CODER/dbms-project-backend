@@ -20,11 +20,11 @@ const createFacultyService = async (req, res) => {
                 }
             )
             console.log(`Successfully created faculty ${facultyId}`);
-            res.status(201).send();
+            res.status(201).send({message: "SUCCESSFULLY CREATED "});
         })
     } catch (error) {
         console.log(error)
-        res.status(500).send();
+        res.status(500).send({message: "FAILED TO CREATE", error: error});
     }
 }
 

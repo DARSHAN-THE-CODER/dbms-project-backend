@@ -21,7 +21,7 @@ const getFacultyService = async (req, res) => {
                 res.status(404).send({ message: "Email ID is invalid, Please sign-up first !" })
             if (password == facultyEntity?.dataValues?.password) {
                 console.log("Sign in successfull")
-                res.status(200).send(facultyEntity.dataValues)
+                res.status(200).send({data:facultyEntity.dataValues,message:"SIGN-IN SUCCESSFULL"})
             }
             else {
                 console.log("Incorrect password")

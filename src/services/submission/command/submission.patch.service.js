@@ -28,7 +28,7 @@ const updateSubmissionService = async (req, res) => {
         })
     } catch (error) {
         console.log(error)
-        res.status(500).send()
+        res.status(500).send({message: "Failed to update"})
     }
 }
 

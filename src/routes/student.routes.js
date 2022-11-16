@@ -9,6 +9,8 @@ const getStudentController = require('../controllers/student/query/student.get.c
 const getStudentsController = require('../controllers/student/query/students.get.controller')
 const createStudentController = require('../controllers/student/command/student.post.controller')
 
+const getLimitedStudentController = require('../controllers/student/query/limitStudents.get.controller')
+
 // constants
 const { SRN, CLASS, CLASS_CODE } = require('../constants/routes.constants')
 
@@ -17,6 +19,9 @@ const { SRN, CLASS, CLASS_CODE } = require('../constants/routes.constants')
 /* GET STUDENTS BELONGING TO PARTICULAR CLASS*/
 router.get(CLASS+CLASS_CODE, getStudentsController)
 
+/* GET LIMITED STUDENTS BELONGING TO PARTICULAR CLASS*/
+router.get(CLASS+'/limit'+CLASS_CODE+'/:limit'+'/:offset', getLimitedStudentController)
+
 /* GET STUDENT */
 router.get(SRN, getStudentController)
 
@@ -24,9 +29,9 @@ router.get(SRN, getStudentController)
 router.post('/', createStudentController)
 
 /* UPDATE STUDENT */
-router.patch(SRN, updateStudentController)
+router.patch(SRN+CLASS_CODE, updateStudentController)
 
 /* DELETE STUDENT */
-router.delete(SRN, deleteStudentController)
+router.delete(SRN+CLASS_CODE, deleteStudentController)
 
 module.exports = router

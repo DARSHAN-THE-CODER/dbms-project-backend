@@ -23,11 +23,11 @@ const getAllClasses = async (req, res) => {
                 }
             })
             console.log(classesEntity)
-            res.status(200).send( classesEntity ? classesEntity : null )
+            res.status(200).send( { data :  classesEntity ? classesEntity : null })
         })
     } catch (error) {
         console.log(error)
-        res.status(500).send()
+        res.status(500).send({message:"Couldn't fetch classes"})
     }
 }
 

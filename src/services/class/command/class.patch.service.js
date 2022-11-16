@@ -19,11 +19,11 @@ const updateClassService = async (req, res) => {
             )
             console.log(classEntity);
             console.log("Successfully updated class details")
-            res.status(200).send()
+            res.status(200).send({message: "Successfully updated class details"})
         })
     } catch (error) {
         console.log(error);
-        res.status(500).send();
+        res.status(500).send({message: "Failed to update class details"});
     }
 }
 

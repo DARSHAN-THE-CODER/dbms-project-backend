@@ -18,11 +18,11 @@ const createAssignmentService = async(req, res) => {
                 }
             )
             console.log("successfully created assignment");
-            res.status(201).send();
+            res.status(201).send({message: "successfully posted assignment"});
         })
     } catch (error) {
         console.log("failed to create assignment :",error);
-        res.status(500).send();
+        res.status(500).send({message: "failed to create assignment"});
     }
 }
 

@@ -7,6 +7,7 @@ const updateClassController = require('../controllers/class/command/class.patch.
 const getClassController = require('../controllers/class/query/class.get.controller')
 const getClassesController = require('../controllers/class/query/classes.get.controller')
 const createClassController = require('../controllers/class/command/class.post.controller')
+const deleteClassController = require('../controllers/class/command/class.delete.controller')
 
 // constants
 const { CLASS_CODE, FACULTY, FACULTY_ID } = require('../constants/routes.constants')
@@ -24,5 +25,8 @@ router.post('/', createClassController)
 
 /* UPDATE CLASS */
 router.patch(CLASS_CODE, updateClassController)
+
+/* DELETE CLASS */
+router.delete(CLASS_CODE, deleteClassController)
 
 module.exports = router
