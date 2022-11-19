@@ -13,6 +13,7 @@ const createSubmissionService = async (req, res) => {
     try {
         const result = await dbConnection.transaction(async (t) => {
 
+            console.log(req.body)
             const classEntity = await classModel.findOne({
                 include: [{
                     model: assignmentModel,
@@ -28,6 +29,7 @@ const createSubmissionService = async (req, res) => {
                 }]
             })
 
+            // console.log("class ",classEntity)
             if (classEntity?.dataValues) {
                 const submissionEntity = await submissionModel.create(
                     {
@@ -39,7 +41,7 @@ const createSubmissionService = async (req, res) => {
                     }
                 )
                 console.log("Assignment submitted succesfully !")
-                res.status(201).send({ mesage: "Assignment submitted succesfully !" })
+                res.status(201).send({ message: "Assignment submitted succesfully !" })
             }
             else {
                 res.status(404).send({ message: "You do not belongs to this class !" })
