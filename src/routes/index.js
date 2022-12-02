@@ -11,7 +11,7 @@ const classRouter = require('./class.routes')
 const facultyRouter = require('./faculty.routes')
 const studentRouter = require('./student.routes')
 const submissionRouter = require('./submission.routes')
-
+const miscRouter = require('./misc.routes')
 // routes
 
 /* ASSIGNMENT ROUTES */
@@ -28,5 +28,8 @@ router.use(STUDENT, studentRouter)
 
 // /* SUBMISSION ROUTES */
 router.use(SUBMISSION, submissionRouter)
+
+/* SPECIAL ROUTES */
+router.use('/special', miscRouter)
 
 module.exports = router

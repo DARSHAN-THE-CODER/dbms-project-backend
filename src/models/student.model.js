@@ -36,7 +36,8 @@ const studentModel = dbConnection.define(
             references: {
                 model: 'Classes',
                 key: 'classCode',
-            }
+            },
+            onDelete: 'CASCADE'
         }
     },
     modelConfiguration

@@ -55,7 +55,29 @@ const dbConnection = require('./src/config/database')
 //     END;`
 // )
 
+// dbConnection.query(
+//     `CREATE FUNCTION getNumberOfStudents(classCode varchar(40))
+//     returns int
+//     DETERMINISTIC
+//     BEGIN
+//         DECLARE numberOfStudents int default 10 ;
+//         -- set numberOfStudents=100;
+//         -- set num
+//         -- return numberOfStudents;
+//         set numberOfStudents = (SELECT COUNT(*) FROM students WHERE students.classCode = classCode);
+//          -- select sum(marks) INTO numberOfStudents  from submissions where submissions.srn="PES1UG20CS536";
+//          -- set numberOfStudents=100;
+//         return numberOfStudents;
+//     END`
+// )
 
+// dbConnection.query(`
+// create procedure back_table (assignmentId varchar(40), assignmentNumber int, title varchar(512), description varchar(2048), type int, resource varchar(2048), classCode varchar(40), facultyId varchar(256))
+// BEGIN
+//         create table if not exists assignment_backup (assignmentId varchar(40), assignmentNumber int, title varchar(512), description varchar(2048), type int, resource varchar(2048), classCode varchar(40), facultyId varchar(256));
+//         INSERT INTO assignment_backup values (assignmentId, assignmentNumber, title,  description, type, resource, classCode , facultyId );
+// END
+// `)
 app.listen(port, () => {
     console.log(`Server listening at ${port}`)
 })

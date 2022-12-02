@@ -36,7 +36,8 @@ const submissionModel = dbConnection.define(
             references: {
                 model: 'Students',
                 key: 'srn',
-            }
+            },
+            onDelete: 'CASCADE'
         },
         assignmentId: {
             type: DataTypes.STRING(256),
@@ -45,6 +46,7 @@ const submissionModel = dbConnection.define(
                 model: 'Assignments',
                 key: 'assignmentId',
             },
+            onDelete: 'CASCADE'
         }
     },
     modelConfiguration

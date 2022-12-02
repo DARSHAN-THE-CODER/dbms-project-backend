@@ -71,7 +71,8 @@ const facultyModel = dbConnection.define('Faculties', {
 
 facultyModel.hasMany(classModel, {
     foreignKey: 'facultyId',
-    sourceKey: 'facultyId'
+    sourceKey: 'facultyId',
+    onDelete: 'CASCADE'
 })
 
 module.exports = facultyModel

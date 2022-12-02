@@ -47,11 +47,13 @@ const assignmentModel = dbConnection.define(
 )
 
 classModel.hasMany(assignmentModel, {
-    foreignKey: 'classCode'
+    foreignKey: 'classCode',
+    onDelete: 'CASCADE'
 })
 
 facultyModel.hasMany(assignmentModel, {
-    foreignKey: 'facultyId'
+    foreignKey: 'facultyId',
+    onDelete: 'CASCADE'
 })
 
 module.exports = assignmentModel

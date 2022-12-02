@@ -41,6 +41,7 @@ const classModel = dbConnection.define(
 
 classModel.hasMany(studentModel, {
     foreignKey: 'classCode',
+    onDelete: 'CASCADE'
 })
 
 module.exports = classModel
